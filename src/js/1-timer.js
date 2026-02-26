@@ -24,6 +24,8 @@ const options = {
     const userDate = selectedDates[0];
     const currentDate = Date.now();
     if (userDate.getTime() <= currentDate) {
+      btn.disabled = true;
+      userSelectedDate = 0;
       iziToast.show({
         color: 'red',
         message: 'Please choose a date in the future',
@@ -32,6 +34,7 @@ const options = {
       return;
     } 
     else {
+      
       userSelectedDate = userDate;
       btn.disabled = false;
     }
